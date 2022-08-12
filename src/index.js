@@ -3,24 +3,18 @@ let userInput= document.querySelector(".userInput");
 let motherUl= document.querySelector(".dynamicList");
 let clearBtn= document.querySelector(".clearBtn");
 class ToDo{
-
-    //Add method
-
     addTask(){
         const task={
             id:taskList.length,
             description:userInput.value.trim(),
             completed: false
         }
-        //check is the user input is valid
         if(userInput.value.trim()!==""){
            taskList.unshift(task);
            userInput.value="";
         }
         myWork.display();
     }
-        // Display the added task.
-
         display(){
             let list="";
             let completed = taskList.status == "completed" ? "checked" : "";
@@ -42,22 +36,16 @@ class ToDo{
             motherUl.innerHTML = list || `<span>No tasks today</span>`;
             this.checkTask();
         }
-
-        // check and uncheck.
         checkTask(){
         let tasks= motherUl.querySelectorAll(".task");
         !tasks.length ? clearBtn.classList.remove("active") : clearBtn.classList.add("active");
         motherUl.offsetHeight >= 200 ? motherUl.classList.add("overflow") : motherUl.classList.remove("overflow");
         }
-       
-        // Remove method.
         removeTask(index){
             taskList.splice(index,1);
             localStorage.setItem("task",JSON.stringify(taskList));
             this.display();
         }
-
-        // Show the PopUp
         popUp(selectedTask){
             let menuDiv = selectedTask.parentElement.lastElementChild;
             menuDiv.classList.add("show");
@@ -67,29 +55,19 @@ class ToDo{
                 }
             });
         }
-
         editTask(text){
             userInput.value=text;
             userInput.focus();
             userInput.classList.add("active");
         }
-
-        //Remove all method.
-
         removeAll(){
             taskList.splice(0, taskList.length);
             localStorage.setItem("task", JSON.stringify(taskList));
             myWork.display();
         }
-
-        // Edit a task.
-
-
     }
 
     const myWork= new ToDo();
-    
-    // Onkey Up somone enters
     userInput.addEventListener("keyup",e=>{
         if(e.key==="Enter" && userInput.value.trim())
         myWork.addTask();
