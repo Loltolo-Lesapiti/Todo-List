@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -14,8 +15,8 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        test: /\.png$/, 
+        use: 'url-loader?mimetype=image/png',
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -31,4 +32,11 @@ module.exports = {
       },
     ]
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'To Do List',
+      filename: 'index.html',
+      template: 'src/index.html',
+    }),
+  ],
 };

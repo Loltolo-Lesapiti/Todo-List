@@ -1,3 +1,5 @@
+import "./icon.png";
+import "./style.css";
 let taskList=JSON.parse(localStorage.getItem("task")) || [];
 let userInput= document.querySelector(".userInput");
 let motherUl= document.querySelector(".dynamicList");
