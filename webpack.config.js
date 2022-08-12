@@ -15,7 +15,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.png$/, 
+        test: /\.png$/,
         use: 'url-loader?mimetype=image/png',
       },
       {
@@ -30,7 +30,7 @@ module.exports = {
         test: /\.xml$/i,
         use: ['xml-loader'],
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
