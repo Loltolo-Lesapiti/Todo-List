@@ -1,0 +1,115 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #d3d3d3;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.main_container {
+  width: 45%;
+  padding: 34px 0 0;
+  margin: 15% 25%;
+  background: #fff;
+}
+
+.task-input {
+  height: 52px;
+  padding: 0 25px;
+  position: relative;
+}
+
+.task-input img {
+  max-width: 34px;
+  height: auto;
+  position: absolute;
+  padding-left: 16px;
+  margin: 10px 78%;
+  color: #d3d3d3;
+}
+
+input {
+  height: 80%;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid;
+}
+
+.task-input input::placeholder {
+  color: #d3d3d3;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.dynamicList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls {
+  border-bottom: 1px solid #ccc;
+}
+
+.clearBtn {
+  color: #000;
+  padding: 7px 18px;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  border: none;
+}
+
+.clearBtn:hover {
+  background-color: rgb(44, 59, 59);
+  color: #fff;
+}
+
+.dynamicList {
+  display: flex;
+  flex-direction: column;
+  margin: 22px 20px;
+  gap: 10px;
+}
+
+.dynamicList.overflow {
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.task {
+  list-style: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.task label {
+  display: flex;
+  gap: 6px;
+}
+
+.task label input {
+  margin-top: 8px;
+}
+
+.task label p {
+  user-select: none;
+}
+
+.task label p.checked {
+  text-decoration: line-through;
+}
+
+.dynamicList .settings {
+  position: relative;
+}
