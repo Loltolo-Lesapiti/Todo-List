@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 import './icon.png';
 import './style.css';
 
@@ -15,6 +15,7 @@ const tasks=[
     status: "",
 }
 ]
+let display=()=>{
 let list = '';
     const completed = tasks.status === 'completed' ? 'checked' : '';
     tasks.forEach((task, id) => {
@@ -28,4 +29,7 @@ let list = '';
                 </div>
             </li>`;
     });
-    ul.innerHTML = list || '<span>No tasks today</span>';
+    return list;
+  }
+
+  ul.innerHTML = display() || '<span>Nothing Scheduled Today</span>';
