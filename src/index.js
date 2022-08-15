@@ -31,10 +31,10 @@ class ToDo {
                     <p class="${completed}">${task.description}</p>
                 </label>
                 <div class="settings">
-                    <i onclick="myWork.popUp(this)" class="uil uil-ellipsis-h"></i>
+                    <i onclick="popUp(this)" class="uil uil-ellipsis-h"></i>
                     <ul class="popUp">
-                        <li onclick='myWork.editTask(${id}, "${task.description}")'><i class="uil uil-pen"></i>Edit</li>
-                        <li onclick='myWork.removeTask(${task.id})'><i class="uil uil-trash"></i>Delete</li>
+                        <li onclick='editTask(${id}, "${task.description}")'><i class="uil uil-pen"></i>Edit</li>
+                        <li onclick='removeTask(${task.id})'><i class="uil uil-trash"></i>Delete</li>
                     </ul>
                 </div>
             </li>`;
@@ -76,8 +76,7 @@ class ToDo {
     myWork.display();
   }
 }
-
-var myWork = new ToDo();
+const myWork = new ToDo();
 userInput.addEventListener('keyup', (e) => {
   if (e.key === 'Enter' && userInput.value.trim()) { myWork.addTask(); }
   localStorage.setItem('task', JSON.stringify(taskList));
