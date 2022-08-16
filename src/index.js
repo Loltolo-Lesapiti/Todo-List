@@ -1,7 +1,6 @@
-import addTask from "./add.js"
-import {taskList,userInput,clearBtn} from "./variables.js"
-import removeAll from "./removeAll.js"
-import PopEditandRemove from "./DisplayAddandRemove.js"
+import addTask from "./module/add.js"
+import {taskList,userInput,clearBtn} from "./module/variables.js"
+import PopEditandRemove from "./module/DisplayAddandRemove.js"
 userInput.addEventListener('keyup', (e) => {
   if (e.key === 'Enter' && userInput.value.trim()) { addTask(); }
   localStorage.setItem('task', JSON.stringify(taskList));
