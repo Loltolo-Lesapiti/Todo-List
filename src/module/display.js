@@ -25,41 +25,41 @@ export default class PopEditandRemove {
     this.checkTask();
   }
 
-      checkTask=() => {
-        let taskLength=motherUl.querySelectorAll('.task').length;
-        if(taskLength===0){
-            clearBtn.classList.remove('active');
-        }else{
-            clearBtn.classList.add('active');
-        }
-        if(motherUl.offsetHeight >= 200){
-            motherUl.classList.add('overflow');
-        }else{
-            motherUl.classList.remove('overflow');
-        }
-      }
+       checkTask=() => {
+         const taskLength = motherUl.querySelectorAll('.task').length;
+         if (taskLength === 0) {
+           clearBtn.classList.remove('active');
+         } else {
+           clearBtn.classList.add('active');
+         }
+         if (motherUl.offsetHeight >= 200) {
+           motherUl.classList.add('overflow');
+         } else {
+           motherUl.classList.remove('overflow');
+         }
+       }
 
-      removeTask(index) {
-        taskList.splice(index, 1);
-        localStorage.setItem('task', JSON.stringify(taskList));
-        this.display();
-        window.location.reload();
-      }
+       removeTask(index) {
+         taskList.splice(index, 1);
+         localStorage.setItem('task', JSON.stringify(taskList));
+         this.display();
+         window.location.reload();
+       }
 
-      popUp(selectedTask) {
-        const menuDiv = selectedTask.parentElement.lastElementChild;
-        menuDiv.classList.add('show');
-        document.addEventListener('click', (e) => {
-          if (e.target.tagName !== 'I' || e.target !== selectedTask) {
-            menuDiv.classList.remove('show');
-          }
-        });
-      }
+       popUp(selectedTask) { // eslint-disable-line 
+         const menuDiv = selectedTask.parentElement.lastElementChild;
+         menuDiv.classList.add('show');
+         document.addEventListener('click', (e) => {
+           if (e.target.tagName !== 'I' || e.target !== selectedTask) {
+             menuDiv.classList.remove('show');
+           }
+         });
+       }
 
-      edit(textName) {
-        userInput.value = textName;
-        textName = userInput.value;
-        userInput.focus();
-        userInput.classList.add('active');
-      }
+       edit(textName) { // eslint-disable-line 
+         userInput.value = textName;
+         textName = userInput.value;
+         userInput.focus();
+         userInput.classList.add('active');
+       }
 }
