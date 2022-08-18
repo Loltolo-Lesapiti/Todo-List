@@ -1,6 +1,6 @@
-# Todo List Application Milestone 2.
+# Todo List Application.
 
-> This is milestone two of the Todo list application. This milestones adds a task, removes a task and edit a task. The this milestones contains the methods to add these functionalities to the stracture.
+> This is a simple Todo list application. The app contains the functionalities for the user to Add a task, remove a task and mark the task as completed. The user can then remove the tasks that are marked as completed. The user can also be able to update a task by edittig.
 
 ## Built with
 
