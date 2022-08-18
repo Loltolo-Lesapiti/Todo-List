@@ -1,0 +1,175 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #d3d3d3;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.main_container {
+  width: 45%;
+  padding: 34px 0 0;
+  margin: 15% 25%;
+  background: #fff;
+}
+
+.task-input {
+  height: 52px;
+  padding: 0 25px;
+  position: relative;
+}
+
+.task-input img {
+  max-width: 34px;
+  height: auto;
+  position: absolute;
+  padding-left: 16px;
+  margin: 10px 78%;
+  color: #d3d3d3;
+}
+
+input {
+  height: 80%;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid;
+}
+
+.task-input input::placeholder {
+  color: #d3d3d3;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.dynamicList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls {
+  border-bottom: 1px solid #ccc;
+}
+
+.clearBtn {
+  color: #000;
+  padding: 7px 18px;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  border: none;
+}
+
+.clearBtn:hover {
+  background-color: rgb(44, 59, 59);
+  color: #fff;
+}
+
+.dynamicList {
+  display: flex;
+  flex-direction: column;
+  margin: 22px 20px;
+  gap: 10px;
+}
+
+.dynamicList.overflow {
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.task {
+  list-style: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.dynamicList .task:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.task label {
+  display: flex;
+  gap: 6px;
+}
+
+.task label input {
+  margin-top: 8px;
+}
+
+.task label p {
+  user-select: none;
+  word-wrap: break-word;
+}
+
+.task label p.checked {
+  text-decoration: line-through;
+  color: red;
+}
+
+.dynamicList .settings {
+  position: relative;
+}
+
+.settings :where(i, li) {
+  cursor: pointer;
+}
+
+.popUp {
+  z-index: 10;
+  right: -5px;
+  bottom: -65px;
+  padding: 5px 0;
+  background: #fff;
+  position: absolute;
+  border-radius: 4px;
+  transform: scale(0);
+  transform-origin: top right;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.dynamicList .task:last-child .task-menu {
+  bottom: 0;
+  transform-origin: bottom right;
+}
+
+.dynamicList .task:first-child .task-menu {
+  bottom: -65px;
+  transform-origin: top right;
+}
+
+.popUp.show {
+  transform: scale(1);
+}
+
+.popUp li {
+  height: 20px;
+  justify-content: flex-start;
+  margin-bottom: 7px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.popUp li:last-child {
+  margin-bottom: 0;
+}
+
+.settings li:hover {
+  background: #f5f5f5;
+}
+
+.settings li i {
+  padding-right: 8px;
+}
