@@ -1,9 +1,10 @@
-import PopEditandRemove from './display.js';
-import { taskList } from './variables.js';
+import PopEditandRemove from "./display.js"
+import { taskList} from "./variables.js";
+const Pop= new PopEditandRemove();
 
-const Pop = new PopEditandRemove();
 export default function removeAll() {
-  taskList.splice(0, taskList.length);
-  localStorage.setItem('task', JSON.stringify(taskList));
-  Pop.display();
-}
+   const newArray=taskList.filter(task=>task.status!=="completed");
+   localStorage.setItem('task', JSON.stringify(newArray));  
+   Pop.display();
+   window.location.reload();
+  }
