@@ -115,6 +115,7 @@ input {
 
 .task label p.checked {
   text-decoration: line-through;
+  color: red;
 }
 
 .dynamicList .settings {
