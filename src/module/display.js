@@ -5,21 +5,24 @@ import {
 export default class PopEditandRemove {
   display() {
     let list = '';
-    const completed = taskList.status === 'completed' ? 'checked' : '';
     taskList.forEach((task, id) => {
+      let completed="";
+      if(task.status==="completed"){
+         completed="checked";
+      }
       list += `<li class="task">
-                    <label for="${id}">
-                        <input type="checkbox" id="${id}" ${completed}>
-                        <p class="${completed}">${task.description}</p>
-                    </label>
-                    <div class="settings">
-                        <i id="dots" class="uil uil-ellipsis-h"></i>
-                        <ul class="popUp">
-                            <li id="edit"><i class="uil uil-pen"></i>Edit</li>
-                            <li id="del"><i class="uil uil-trash"></i>Delete</li>
-                        </ul>
-                    </div>
-                </li>`;
+                <label for="${id}">
+                    <input class="update" type="checkbox" id="${id}" ${completed}>
+                    <p class="${completed}">${task.description}</p>
+                </label>
+                <div class="settings">
+                    <i id="dots" class="uil uil-ellipsis-h"></i>
+                    <ul class="popUp">
+                        <li id="edit"><i class="uil uil-pen"></i>Edit</li>
+                        <li id="del"><i class="uil uil-trash"></i>Delete</li>
+                    </ul>
+                </div>
+            </li>`;
     });
     motherUl.innerHTML = list || '<span>No tasks today</span>';
     this.checkTask();
