@@ -6,9 +6,9 @@ export default class PopEditandRemove {
   display() {
     let list = '';
     taskList.forEach((task, id) => {
-      let completed="";
-      if(task.status==="completed"){
-         completed="checked";
+      let completed = '';
+      if (task.status === 'completed') {
+        completed = 'checked';
       }
       list += `<li class="task">
                 <label for="${id}">
@@ -65,15 +65,16 @@ export default class PopEditandRemove {
          userInput.focus();
          userInput.classList.add('active');
        }
-       taskStatus(selectedTask) {
-        let name = selectedTask.parentElement.lastElementChild;
-        if(selectedTask.checked) {
-          name.classList.add("checked");
-            taskList[selectedTask.id].status = "completed";
-        } else {
-            name.classList.remove("checked");
-            taskList[selectedTask.id].status = "pending";
-        }
-        localStorage.setItem("task", JSON.stringify(taskList))
-    }
+
+       taskStatus(selectedTask) {// eslint-disable-line
+         const name = selectedTask.parentElement.lastElementChild;
+         if (selectedTask.checked) {
+           name.classList.add('checked');
+           taskList[selectedTask.id].status = 'completed';
+         } else {
+           name.classList.remove('checked');
+           taskList[selectedTask.id].status = 'pending';
+         }
+         localStorage.setItem('task', JSON.stringify(taskList));
+       }
 }

@@ -14,7 +14,7 @@ Pop.display();
 const dots = document.querySelectorAll('#dots');
 const edit = document.querySelectorAll('#edit');
 const del = document.querySelectorAll('#del');
-const TaskStatusupdates= document.querySelectorAll(".update");
+const TaskStatusupdates = document.querySelectorAll('.update');
 dots.forEach((dot) => {
   dot.addEventListener('click', () => Pop.popUp(dot));
 });
@@ -24,9 +24,7 @@ edit.forEach((item, index) => {
     taskList.splice(index, 1);
   });
 });
-TaskStatusupdates.forEach(update=>
-  update.addEventListener("click",()=>Pop.taskStatus(update))
-);
+TaskStatusupdates.forEach((update) => update.addEventListener('click', () => Pop.taskStatus(update)));
 del.forEach((item) => {
   item.addEventListener('click', () => Pop.removeTask(item));
 });
