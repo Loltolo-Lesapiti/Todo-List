@@ -15,7 +15,7 @@
 
 ## Live demo
 
-You can watch [here](/) a live demo of our project.
+You can watch [here](/https://loltolo-lesapiti.github.io/Todo-List/) a live demo of our project.
 
 ## Test
 
