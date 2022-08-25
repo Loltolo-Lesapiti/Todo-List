@@ -4,7 +4,7 @@
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack"
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/Loltolo-Lesapiti/Todo-List/issues"
   },
-  "homepage": "https://github.com/Loltolo-Lesapiti/Todo-List#readme",
+  "homepage": "https://loltolo-lesapiti.github.io/Todo-List",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
@@ -39,6 +39,7 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "lodash": "^4.17.21",
     "url-loader": "^4.1.1"
   },
